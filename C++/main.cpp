@@ -8,13 +8,14 @@ int main(int, char **)
     int n;
     while (cin >> n)
     {
-        cout << n << endl;
-
-        vector<int> v;
-        for (int i = 0; i < n; i++)
+        vector<int> v = {1};
+        for (int i = 2; i*i <= n; i++)
         {
             if (n % i == 0)
+            {
                 v.push_back(i);
+                v.push_back(n/i);
+            }
         }
         int sum = 0;
         for (int i : v)
@@ -27,4 +28,4 @@ int main(int, char **)
         else
             cout << n << " not perfect" << endl;
     }
-}
+} 
